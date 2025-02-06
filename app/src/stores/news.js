@@ -1,16 +1,33 @@
 import { defineStore } from 'pinia'
-import { ref } from 'vue';
+import axios from "axios";
 
 
-export const useNodesStore = defineStore('news', {
+export const useNewsStore = defineStore('news', {
+   
     state: () => ({
-        news: ref([ ]),
+        news: [ ],
     }),
 
+    
     actions: {
-   
-   
+        
+        async loadNews() {
+            // axios.delete('/api/nodeBoxes/' + id)
+            // .then(res => {
+            //     if (res.data) {
+            //         this.boxes.delete(id);
+            //     } else {
+                    
+            //     }
+            // })
+            axios.get('http://localhost/api/news')
+            .then(res => {
+                this.news = res.data;
+            })
+        },
+
     },
+
     getters: {
        
     },

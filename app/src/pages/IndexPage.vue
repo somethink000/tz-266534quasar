@@ -26,13 +26,13 @@
       </div>
 
       <div class="row mb-2">
-
-        <div class="col-md-6">
+       
+        <div class="col-md-6" v-for="newsobj in store.news" :key="newsobj.id">
           <div class="card flex-md-row mb-4 box-shadow h-md-250">
             <div class="card-body d-flex flex-column align-items-start">
               <strong class="d-inline-block mb-2 text-primary">World</strong>
               <h3 class="mb-0">
-                <a class="text-dark" href="#">Featured post</a>
+                <a class="text-dark" href="#">{{ newsobj.title }}</a>
               </h3>
               <div class="mb-1 text-muted">Nov 12</div>
               <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
@@ -50,27 +50,23 @@
 <script>
 
   import { defineComponent } from "vue";
-  import axios from "axios";
-
+  import { useNewsStore } from 'stores/news';
 
   export default defineComponent ({
 
     name: 'PageIndex',
 
+    // data: (instance) => ({     
+    //   drag: [],
+		// }),
+
     setup () {
 
-      // axios.get('http://localhost/sanctum/csrf-cookie')
-      // .then(res => {
+      const store = useNewsStore();
+      
+      store.loadNews();
 
-      //   console.log(res)
-        
-      // })
-
-
-      axios.get('http://localhost/api/news')
-      .then(res => {
-          console.log(res.data);
-      })
+      return { store };
     }
   })
 </script>

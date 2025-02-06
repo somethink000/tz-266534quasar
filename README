@@ -1,0 +1,15 @@
+
+
+есть сидер новостей для проверки php artisan db:seed
+
+
+чтобы поднять
+
+// в appmainapi/
+composer install 
+./vendor/bin/sail up
+./vendor/bin/sail php artisan migrate:refresh
+ 
+// в app/
+npm install 
+npm run dev
