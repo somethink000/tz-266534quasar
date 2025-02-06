@@ -56,16 +56,13 @@
 
     name: 'PageIndex',
 
-    // data: (instance) => ({     
-    //   drag: [],
-		// }),
-
     setup () {
 
       const store = useNewsStore();
       
       store.loadNews();
 
+      
       return { store };
     }
   })

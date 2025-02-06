@@ -22,7 +22,8 @@ class NewsobjUpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'title' => 'required|string|min:10|max:200',
+            'text' => 'required|string|min:100',
         ];
     }
 }

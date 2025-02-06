@@ -20,9 +20,10 @@ class NewsobjStoreRequest extends FormRequest
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
      */
     public function rules(): array
-    {
+    { 
         return [
-            //
+            'title' => 'required|string|min:10|max:200',
+            'text' => 'required|string|min:100',
         ];
     }
 }
