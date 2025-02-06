@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('newsobjs', function (Blueprint $table) {
             $table->id();
+            $table->string("title", 255);
+            $table->text("text");
+            $table->integer("views");
             $table->timestamps();
         });
     }
