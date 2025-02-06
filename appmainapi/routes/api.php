@@ -12,7 +12,8 @@ Route::get('/user', function (Request $request) {
 
 
 
-Route::resource('taskBoxes', NewsController::class)
+Route::resource('news', NewsController::class)
 ->except([
    'create', 'edit','show', 
 ]);
+
