@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\NewsobjStoreRequest;
+use App\Http\Requests\NewsobjUpdateRequest;
 use Illuminate\Http\Request;
 use App\Models\Newsobj;
 
@@ -36,7 +37,7 @@ class NewsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(NewsobjStoreRequest $request, Newsobj $newsobj)
+    public function update(NewsobjUpdateRequest $request, Newsobj $newsobj)
     {
         $newsobj->update($request->all());
 

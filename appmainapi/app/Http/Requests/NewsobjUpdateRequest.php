@@ -23,7 +23,7 @@ class NewsobjUpdateRequest extends FormRequest
     {
         return [
             'title' => 'required|string|min:10|max:200',
-            'text' => 'required|string|min:100',
+            'text' => 'required|string|min:10',
         ];
     }
 }

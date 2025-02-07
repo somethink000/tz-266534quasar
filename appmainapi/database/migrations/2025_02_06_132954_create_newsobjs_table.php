@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string("title", 255);
             $table->text("text"); 
-            $table->integer("views");
+            $table->integer("views")->default(0);;
             $table->timestamps();
         });
     }

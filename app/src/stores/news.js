@@ -18,6 +18,26 @@ export const useNewsStore = defineStore('news', {
             })
         },
 
+
+        async createNewsobj(form) {
+            
+            return axios.post('http://localhost/api/news', form, {
+                headers: {
+                    "Content-type": "application/json"
+                }
+            })
+            .then(res => {
+                
+                var data = res.data;
+
+                if (data) {
+                    
+                    this.news.push(data);
+                } 
+            })  
+        },
+
+        
     },
 
     getters: {

@@ -18,8 +18,8 @@ class DatabaseSeeder extends Seeder
 
         for ($i = 1; $i <= 4; $i++) {
             DB::table('newsobjs')->insert([
-                'title' => Str::random(100),
-                'text' => Str::random(1000),
+                'title' => Str::random(rand(30,100)),
+                'text' => Str::random(rand(500,1000)),
                 'views' => rand(0,1000),
             ]);
         }
